@@ -28,8 +28,9 @@ namespace GetConsultaMontoOrdenes
         [WebMethod]
         public DataSet GetConsultaMontoOrdenes_()
         {
-            SqlConnection connnct = new SqlConnection("Server=localhost;Database=AdventureWorks2014; Trusted_connection=True;");
-            connnct.Open();
+            SqlConnection connect = new SqlConnection("Server=localhost;Database=AdventureWorks2014; Trusted_connection=True;");
+            connect.Open();
+
             DataSet ds = new DataSet();
 
             return ds;
