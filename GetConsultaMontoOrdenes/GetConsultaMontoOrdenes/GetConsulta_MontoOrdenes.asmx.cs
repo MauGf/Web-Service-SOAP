@@ -30,9 +30,11 @@ namespace GetConsultaMontoOrdenes
         {
             SqlConnection connect = new SqlConnection("Server=localhost;Database=AdventureWorks2014; Trusted_connection=True;");
             connect.Open();
+            SqlDataAdapter consulta = new SqlDataAdapter("SELECT top 20 [SalesOrderID], COUNT([SalesOrderDetailID]) AS [# Line Items], STR(SUM([UnitPrice] * [OrderQty])) AS [Monto Total] FROM[Sales].[SalesOrderDetail] GROUP BY SalesOrderID",connect);
 
+           
             DataSet ds = new DataSet();
-
+            consulta.Fill(ds);
             return ds;
 
         }
