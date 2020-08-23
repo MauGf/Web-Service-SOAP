@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        &nbsp;Consumir&nbsp; Web Service SOAP (Prueba)</div>
+        &nbsp;Consumir&nbsp; Web Service SOAP (Prueba con primeros 20 items)</div>
         <br>
         <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="White" />
