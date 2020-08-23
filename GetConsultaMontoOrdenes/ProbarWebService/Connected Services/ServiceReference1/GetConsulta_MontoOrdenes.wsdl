@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://maugarciaapps.tech/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://maugarciaapps.tech/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://maugarciaapps.tech/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsultaMontoOrdenes_">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConsultaMontoOrdenes_Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsultaMontoOrdenes_Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsultaMontoOrdenes_SoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsultaMontoOrdenes_" />
+  </wsdl:message>
+  <wsdl:message name="GetConsultaMontoOrdenes_SoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsultaMontoOrdenes_Response" />
+  </wsdl:message>
+  <wsdl:portType name="GetConsulta_MontoOrdenesSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaMontoOrdenes_">
+      <wsdl:input message="tns:GetConsultaMontoOrdenes_SoapIn" />
+      <wsdl:output message="tns:GetConsultaMontoOrdenes_SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetConsulta_MontoOrdenesSoap" type="tns:GetConsulta_MontoOrdenesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://maugarciaapps.tech/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaMontoOrdenes_">
+      <soap:operation soapAction="http://maugarciaapps.tech/GetConsultaMontoOrdenes_" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetConsulta_MontoOrdenesSoap12" type="tns:GetConsulta_MontoOrdenesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://maugarciaapps.tech/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaMontoOrdenes_">
+      <soap12:operation soapAction="http://maugarciaapps.tech/GetConsultaMontoOrdenes_" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetConsulta_MontoOrdenes">
+    <wsdl:port name="GetConsulta_MontoOrdenesSoap" binding="tns:GetConsulta_MontoOrdenesSoap">
+      <soap:address location="http://localhost:49364/GetConsulta_MontoOrdenes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetConsulta_MontoOrdenesSoap12" binding="tns:GetConsulta_MontoOrdenesSoap12">
+      <soap12:address location="http://localhost:49364/GetConsulta_MontoOrdenes.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
